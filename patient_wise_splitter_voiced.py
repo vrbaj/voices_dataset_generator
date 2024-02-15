@@ -5,9 +5,9 @@ from random import shuffle, sample
 
 
 
-svd_path = Path("datasets", "voiced_renamed")
-destination_path_wavs = Path("datasets", "wavs_voiced")
-destination_path_spectrogram = Path("datasets", "spectrogram_voiced")
+svd_path = Path("datasets", "spectrograms", "voiced_renamed")
+destination_path_wavs = Path("datasets", "wavs", "wavs_voiced")
+destination_path_spectrogram = Path("datasets", "spectrograms", "voiced_renamed")
 fft_len = 256
 fft_overlap = 128
 spectrogram_resolution = (480, 480)
@@ -15,16 +15,6 @@ octaves = []
 chunks = 10
 
 
-
-# for txt_file in svd_path.glob("*.*"):
-#     txt2wav(txt_file, destination_path_wavs, 8000, chunks)
-# print("txt2wav done")
-#
-# for wav_file in destination_path_wavs.glob("*.*"):
-#     print(f"processing {wav_file}")
-#     wav2spectrogram(wav_file, destination_path_spectrogram, fft_len, fft_overlap,
-#                                     spectrogram_resolution, octaves=[], standard_chunk=False,
-#                                     resampling_freq=None)
 dataset_path = Path("datasets", "patients_wise_datasets_voiced")
 dataset_path.mkdir(exist_ok=True)
 dataset_path.joinpath("train", "healthy").mkdir(exist_ok=True, parents=True)

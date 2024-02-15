@@ -5,26 +5,14 @@ from random import shuffle, sample
 
 
 
-svd_path = Path("datasets", "svdadult_renamed")
+svd_path = Path("datasets", "raw", "svdadult_renamed")
 destination_path_wavs = Path("datasets", "wavs")
-destination_path_spectrogram = Path("datasets", "spectrogram")
-fft_len = 256
-fft_overlap = 128
-spectrogram_resolution = (480, 480)
-octaves = []
-chunks = 10
+destination_path_spectrogram = Path("datasets", "spectrograms", "svdadult_renamed")
 
 
 
-# for txt_file in svd_path.glob("*.*"):
-#     txt2wav(txt_file, destination_path_wavs, 50000, chunks)
-# print("txt2wav done")
-#
-# for wav_file in destination_path_wavs.glob("*.*"):
-#     print(f"processing {wav_file}")
-#     wav2spectrogram(wav_file, destination_path_spectrogram, fft_len, fft_overlap,
-#                                     spectrogram_resolution, octaves=[], standard_chunk=False,
-#                                     resampling_freq=None)
+
+
 dataset_path = Path("datasets", "patients_wise_datasets")
 dataset_path.mkdir(exist_ok=True)
 dataset_path.joinpath("train", "healthy").mkdir(exist_ok=True, parents=True)
